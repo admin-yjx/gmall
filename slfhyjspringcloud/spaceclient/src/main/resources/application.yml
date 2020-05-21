@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@14.29.116.237:1521:orcl
+    username: sde_slfh
+    password: sde_slfh
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  application:
+      name: spaceclient
+  eureka:
+    client:
+      service-url:
+         defultZone: http://localhost:8761/eureka/
+    instance:
+      prefer-ip-address: true
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 8087
+logging:
+  level:
+    com:
+      southwind:
+        spaceclient:
+            controller: debug
+            dao: debug
+            service: debug
+  file:
+    path: log

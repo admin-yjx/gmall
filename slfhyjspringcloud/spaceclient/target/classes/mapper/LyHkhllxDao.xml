@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.southwind.spaceclient.dao.LyHkhllxDao">
+
+    <resultMap type="com.southwind.spaceclient.entity.LyHkhllx" id="LyHkhllxMap">
+        <result property="objectid" column="OBJECTID" jdbcType="OTHER"/>
+        <result property="xhsj" column="XHSJ" jdbcType="OTHER"/>
+        <result property="xhrq" column="XHRQ" jdbcType="OTHER"/>
+        <result property="xhrs" column="XHRS" jdbcType="OTHER"/>
+        <result property="xhlxcd" column="XHLXCD" jdbcType="OTHER"/>
+        <result property="xhfzr" column="XHFZR" jdbcType="OTHER"/>
+        <result property="ssdw" column="SSDW" jdbcType="OTHER"/>
+        <result property="dwglr" column="DWGLR" jdbcType="OTHER"/>
+        <result property="lxdh" column="LXDH" jdbcType="OTHER"/>
+        <result property="sfyc" column="SFYC" jdbcType="OTHER"/>
+        <result property="ycyy" column="YCYY" jdbcType="OTHER"/>
+        <result property="xhqd" column="XHQD" jdbcType="OTHER"/>
+        <result property="xhzd" column="XHZD" jdbcType="OTHER"/>
+        <result property="bsm" column="BSM" jdbcType="OTHER"/>
+        <result property="bz" column="BZ" jdbcType="OTHER"/>
+        <result property="fjjc" column="FJJC" jdbcType="OTHER"/>
+        <result property="fxsj" column="FXSJ" jdbcType="OTHER"/>
+        <result property="jjjc" column="JJJC" jdbcType="OTHER"/>
+        <result property="jjrc" column="JJRC" jdbcType="OTHER"/>
+        <result property="fxf" column="FXF" jdbcType="OTHER"/>
+        <result property="fjjx" column="FJJX" jdbcType="OTHER"/>
+        <result property="shape" column="SHAPE" jdbcType="OTHER"/>
+    </resultMap>
+
+
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.southwind.spaceclient.dao.LySpjkDao">
+
+    <resultMap type="com.southwind.spaceclient.entity.LySpjk" id="LySpjkMap">
+        <result property="objectid" column="OBJECTID" jdbcType="OTHER"/>
+        <result property="sbbh" column="SBBH" jdbcType="OTHER"/>
+        <result property="jkbh" column="JKBH" jdbcType="OTHER"/>
+        <result property="wz" column="WZ" jdbcType="OTHER"/>
+        <result property="hb" column="HB" jdbcType="OTHER"/>
+        <result property="bz" column="BZ" jdbcType="OTHER"/>
+        <result property="jdqk" column="JDQK" jdbcType="OTHER"/>
+        <result property="zxqk" column="ZXQK" jdbcType="OTHER"/>
+        <result property="ip" column="IP" jdbcType="OTHER"/>
+        <result property="zwym" column="ZWYM" jdbcType="OTHER"/>
+        <result property="wg" column="WG" jdbcType="OTHER"/>
+        <result property="fsfw" column="FSFW" jdbcType="OTHER"/>
+        <result property="xian" column="XIAN" jdbcType="OTHER"/>
+        <result property="xiang" column="XIANG" jdbcType="OTHER"/>
+        <result property="cun" column="CUN" jdbcType="OTHER"/>
+        <result property="z" column="Z" jdbcType="OTHER"/>
+        <result property="x" column="X" jdbcType="OTHER"/>
+        <result property="y" column="Y" jdbcType="OTHER"/>
+        <result property="bsm" column="BSM" jdbcType="OTHER"/>
+        <result property="jklx" column="JKLX" jdbcType="OTHER"/>
+        <result property="jkzt" column="JKZT" jdbcType="OTHER"/>
+        <result property="jssj" column="JSSJ" jdbcType="OTHER"/>
+        <result property="sbmc" column="SBMC" jdbcType="OTHER"/>
+        <result property="jzmc" column="JZMC" jdbcType="OTHER"/>
+        <result property="zygs" column="ZYGS" jdbcType="OTHER"/>
+        <result property="tlx" column="TLX" jdbcType="OTHER"/>
+        <result property="shape" column="SHAPE" jdbcType="OTHER"/>
+    </resultMap>
+    <select id="getMonitoringES" resultType="com.southwind.spaceclient.entity.PublicClass">
+           SELECT COUNT(LY_SPJK.XIANG) AS total ,LY_SPJK.XIANG AS typeName
+           FROM LY_SPJK
+           GROUP BY LY_SPJK.XIANG
+    </select>
+    <select id="getStandArea" resultType="int">
+        SELECT SUM(LY_SPJKFW.FSFW) FROM LY_SPJKFW
+    </select>
+    <select id="getGrossArea" resultType="int">
+        SELECT LY_XZQ_X.KZMJ FROM LY_XZQ_X
+    </select>
+</mapper>

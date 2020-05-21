@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.southwind.businessclient.dao.LyHzyjclbDao">
+
+    <resultMap type="com.southwind.businessclient.entity.LyHzyjclb" id="LyHzyjclbMap">
+        <result property="id" column="ID" jdbcType="OTHER"/>
+        <result property="sfyxyj" column="SFYXYJ" jdbcType="OTHER"/>
+        <result property="yjsb" column="YJSB" jdbcType="OTHER"/>
+        <result property="sbbh" column="SBBH" jdbcType="OTHER"/>
+        <result property="clr" column="CLR" jdbcType="OTHER"/>
+        <result property="clsj" column="CLSJ" jdbcType="OTHER"/>
+        <result property="clzt" column="CLZT" jdbcType="OTHER"/>
+        <result property="yjbh" column="YJBH" jdbcType="OTHER"/>
+        <result property="yjqzp" column="YJQZP" jdbcType="OTHER"/>
+        <result property="yjhzp" column="YJHZP" jdbcType="OTHER"/>
+        <result property="tssj" column="TSSJ" jdbcType="OTHER"/>
+        <result property="bzxx" column="BZXX" jdbcType="OTHER"/>
+    </resultMap>
+
+   <select id="getLyHzyjclbByGroupYjsb" resultType="com.southwind.businessclient.entity.LyHzyjclb">
+       SELECT LY_HZYJCLB.YJSB FROM LY_HZYJCLB GROUP BY LY_HZYJCLB.YJSB
+   </select>
+
+</mapper>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.southwind.spaceclient.dao.LyFhgldDao">
+
+    <resultMap type="com.southwind.spaceclient.entity.LyFhgld" id="LyFhgldMap">
+        <result property="objectid" column="OBJECTID" jdbcType="OTHER"/>
+        <result property="sm" column="SM" jdbcType="OTHER"/>
+        <result property="dqm" column="DQM" jdbcType="OTHER"/>
+        <result property="xm" column="XM" jdbcType="OTHER"/>
+        <result property="gjxzqhm" column="GJXZQHM" jdbcType="OTHER"/>
+        <result property="mc" column="MC" jdbcType="OTHER"/>
+        <result property="ldsz" column="LDSZ" jdbcType="OTHER"/>
+        <result property="gldkd" column="GLDKD" jdbcType="OTHER"/>
+        <result property="gldcd" column="GLDCD" jdbcType="OTHER"/>
+        <result property="yznd" column="YZND" jdbcType="OTHER"/>
+        <result property="qsjd" column="QSJD" jdbcType="OTHER"/>
+        <result property="qswd" column="QSWD" jdbcType="OTHER"/>
+        <result property="zzjd" column="ZZJD" jdbcType="OTHER"/>
+        <result property="zzwd" column="ZZWD" jdbcType="OTHER"/>
+        <result property="ldzj" column="LDZJ" jdbcType="OTHER"/>
+        <result property="ldhj" column="LDHJ" jdbcType="OTHER"/>
+        <result property="gldw" column="GLDW" jdbcType="OTHER"/>
+        <result property="glrsm" column="GLRSM" jdbcType="OTHER"/>
+        <result property="lxdh" column="LXDH" jdbcType="OTHER"/>
+        <result property="yzwz" column="YZWZ" jdbcType="OTHER"/>
+        <result property="zglx" column="ZGLX" jdbcType="OTHER"/>
+        <result property="syzt" column="SYZT" jdbcType="OTHER"/>
+        <result property="zpy" column="ZPY" jdbcType="OTHER"/>
+        <result property="zpe" column="ZPE" jdbcType="OTHER"/>
+        <result property="spwj" column="SPWJ" jdbcType="OTHER"/>
+        <result property="smwj" column="SMWJ" jdbcType="OTHER"/>
+        <result property="slwj" column="SLWJ" jdbcType="OTHER"/>
+        <result property="bsm" column="BSM" jdbcType="OTHER"/>
+        <result property="bz" column="BZ" jdbcType="OTHER"/>
+        <result property="shape" column="SHAPE" jdbcType="OTHER"/>
+        <result property="bh" column="BH" jdbcType="OTHER"/>
+    </resultMap>
+    <select id="getFireBarrier" resultType="com.southwind.spaceclient.entity.PublicClass">
+         SELECT COUNT(LY_FHGLD.ZGLX) AS total ,LY_FHGLD.ZGLX AS typeName
+           FROM LY_FHGLD
+           GROUP BY LY_FHGLD.ZGLX
+    </select>
+
+</mapper>

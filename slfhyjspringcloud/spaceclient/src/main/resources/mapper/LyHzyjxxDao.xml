@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.southwind.spaceclient.dao.LyHzyjxxDao">
+
+    <resultMap type="com.southwind.spaceclient.entity.LyHzyjxx" id="LyHzyjxxMap">
+        <result property="objectid" column="OBJECTID" jdbcType="OTHER"/>
+        <result property="bsm" column="BSM" jdbcType="OTHER"/>
+        <result property="ssxzq" column="SSXZQ" jdbcType="OTHER"/>
+        <result property="yjlx" column="YJLX" jdbcType="OTHER"/>
+        <result property="yjdj" column="YJDJ" jdbcType="OTHER"/>
+        <result property="yjsj" column="YJSJ" jdbcType="OTHER"/>
+        <result property="jtwz" column="JTWZ" jdbcType="OTHER"/>
+        <result property="jd" column="JD" jdbcType="OTHER"/>
+        <result property="wd" column="WD" jdbcType="OTHER"/>
+        <result property="yjr" column="YJR" jdbcType="OTHER"/>
+        <result property="bz" column="BZ" jdbcType="OTHER"/>
+        <result property="yjfs" column="YJFS" jdbcType="OTHER"/>
+        <result property="zdbh" column="ZDBH" jdbcType="OTHER"/>
+        <result property="jkbh" column="JKBH" jdbcType="OTHER"/>
+        <result property="yjbh" column="YJBH" jdbcType="OTHER"/>
+        <result property="shape" column="SHAPE" jdbcType="OTHER"/>
+    </resultMap>
+    <select id="getFireThreatMS" resultType="com.southwind.spaceclient.entity.PublicClass">
+           SELECT COUNT(LY_HZYJXX.YJLX) AS total ,LY_HZYJXX.YJLX AS typeName
+           FROM LY_HZYJXX
+           GROUP BY LY_HZYJXX.YJLX
+    </select>
+    <select id="getLyHzyjxxVos" resultType="com.southwind.spaceclient.vo.LyHzyjxxVo">
+        SELECT SLFH.LY_HZYJCLB.CLR AS yjr,
+         SLFH.LY_HZYJCLB.YJSB AS yjfs,
+         TO_CHAR(SDE_SLFH.LY_HZYJXX.YJSJ,'YYYY-MM-dd HH24:MI') AS yjsj,
+         SDE_SLFH.LY_HZYJXX.WD,
+         SDE_SLFH.LY_HZYJXX.OBJECTID,
+         SDE_SLFH.LY_HZYJXX.YJLX,
+         SDE_SLFH.LY_HZYJXX.SSXZQ,
+         SDE_SLFH.LY_HZYJXX.JD,
+         SDE_SLFH.LY_HZYJXX.YJDJ,
+         SDE_SLFH.LY_HZYJXX.YJBH
+         FROM
+         SLFH.LY_HZYJCLB
+         INNER JOIN
+        SDE_SLFH.LY_HZYJXX
+        ON SLFH.LY_HZYJCLB.YJBH=SDE_SLFH.LY_HZYJXX.YJBH
+    </select>
+</mapper>
